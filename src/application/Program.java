@@ -1,11 +1,10 @@
 package application;
 
 import entities.Pet;
-import entities.PetException;
+import exceptions.IdadeException;
 import entities.Sexo;
 import entities.Tipo;
-
-import javax.swing.*;
+import exceptions.PesoException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -33,12 +32,11 @@ public class Program {
             System.out.print("Digite a opção escolhida: ");
             opcao = sc.nextInt();
             sc.nextLine();
-            if (opcao <=0 || opcao > 6) {
+            if (opcao <= 0 || opcao > 6) {
                 System.out.print("Número invalido, digite novamente: ");
                 opcao = sc.nextInt();
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.err.println("Erro: " + e.getMessage());
         }
 
@@ -46,8 +44,8 @@ public class Program {
         List<String> lista = new ArrayList<>();
         List<Pet> listaPets = new ArrayList<>();
         if (opcao == 1) {
-            String resposta = null;
-            try (BufferedReader br = new BufferedReader(new FileReader("src//formulario"))){
+            String resposta;
+            try (BufferedReader br = new BufferedReader(new FileReader("src//formulario"))) {
 
                 String linha;
                 while ((linha = br.readLine()) != null) {
@@ -63,21 +61,46 @@ public class Program {
                 peso = Double.parseDouble(lista.get(8));
 
                 if (idade > 20) {
-                    throw new PetException();
+                    throw new IdadeException();
                 }
                 if (peso > 60 || peso < 0.5) {
-                    throw new PetException();
+                    throw new PesoException();
                 }
 
                 Pet pet = new Pet(lista.get(0), lista.get(1), tipo, sexo, numCasa, lista.get(5), lista.get(6), idade, peso, lista.get(9));
                 listaPets.add(pet);
                 pet.salvarPet();
-            }
-            catch (PetException e) {
+            } catch (IdadeException i) {
+                System.err.println("Erro: " + i.getMessage());
+            } catch (IOException e) {
                 System.err.println("Erro: " + e.getMessage());
+            } catch (PesoException p) {
+                System.err.println("Erro: " + p.getMessage());
             }
-            catch (IOException e) {
-                System.err.println("Erro: " + e.getMessage());
+        }
+
+        if (opcao == 2) {
+            System.out.print("Quantos dados você deseja utilizar na busca (1 ou 2)? ");
+            int quantidade = sc.nextInt();
+            System.out.println("Selecione os dados que deseja utilizar para a busca (Utilizando o número correspondente): ");
+            System.out.println("-------------------------------------------------------------------------------------");
+            System.out.println("1 - Nome ou Sobrenome");
+            System.out.println("2 - Sexo");
+            System.out.println("3 - Idade");
+            System.out.println("4 - Peso");
+            System.out.println("5 - Raça");
+            System.out.println("6 - Cidade");
+            System.out.println("-------------------------------------------------------------------------------------");
+            if (quantidade == 1) {
+                System.out.print("Digite o dado escolhido: ");
+                int opcaoEscolhida1 = sc.nextInt();
+            }
+            if (quantidade == 2) {
+                System.out.println("Digite os dados escolhidos: ");
+                System.out.print("Opção 1: ");
+                int opcaoEscolhida1 = sc.nextInt();
+                System.out.print("Opção 2: ");
+                int opcaoEscolhida2 = sc.nextInt();
             }
         }
     }

@@ -1,6 +1,5 @@
 package entities;
 
-import javax.imageio.IIOException;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -120,7 +119,7 @@ public class Pet {
         nomeArquivo = dataHora + "-" + nomeArquivo + ".TXT";
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("petsCadastrados/" + nomeArquivo))) {
-            bw.write("1 - " + getNome() + " "  + getSobrenome());
+            bw.write("1 - " + getNome() + " " + getSobrenome());
             bw.newLine();
             bw.write("2 - " + getTipo());
             bw.newLine();
@@ -133,8 +132,7 @@ public class Pet {
             bw.write("6 - " + getPeso() + "kg");
             bw.newLine();
             bw.write("7 - " + getRaca());
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
