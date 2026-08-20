@@ -28,3 +28,27 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Arquivos compilados / build
+*.class
+out/
+bin/
+target/
+
+# Pets cadastrados durante a execução
+petsCadastrados/*.TXT
+petsCadastrados/*.txt
+
+# Mantém a pasta petsCadastrados no Git
+!petsCadastrados/.gitkeep
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
