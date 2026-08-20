@@ -119,19 +119,19 @@ public class Pet {
         nomeArquivo = dataHora + "-" + nomeArquivo + ".TXT";
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("petsCadastrados/" + nomeArquivo))) {
-            bw.write("1 - " + getNome() + " " + getSobrenome());
+            bw.write(getNome() + getSobrenome());
             bw.newLine();
-            bw.write("2 - " + getTipo());
+            bw.write(getTipo().toString());
             bw.newLine();
-            bw.write("3 - " + getSexo());
+            bw.write(getSexo().toString());
             bw.newLine();
-            bw.write("4 - " + getRua() + ", " + getNumCasa() + ", " + getCidade());
+            bw.write(getRua() + ", " + getNumCasa() + ", " + getCidade());
             bw.newLine();
-            bw.write("5 - " + getIdade() + " anos");
+            bw.write(getIdade().toString());
             bw.newLine();
-            bw.write("6 - " + getPeso() + "kg");
+            bw.write(getPeso().toString());
             bw.newLine();
-            bw.write("7 - " + getRaca());
+            bw.write(getRaca());
         } catch (IOException e) {
             e.printStackTrace();
         }

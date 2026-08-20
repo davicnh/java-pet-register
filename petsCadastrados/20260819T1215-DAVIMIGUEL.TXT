@@ -1,7 +1,0 @@
-1 - DaviMiguel
-2 - CACHORRO
-3 - MASCULINO
-4 - Rua 11 de Junho, 73, Blumenau
-5 - 10.0 anos
-6 - 15.0kg
-7 - Vira lata
