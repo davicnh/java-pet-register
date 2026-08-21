@@ -1012,6 +1012,13 @@ public class Program {
             }
         }
         //Fim da opção 4 do menu (Passo 7 do desafio)
+
+        //Opção 5 do menu inicial (Passo 8 do desafio)
+        if (opcao == 5) {
+            System.out.println("Programa encerrado.");
+            System.exit(0);
+        }
+        //Fim da opção 5 do menu (Passo 8 do desafio)
     }
 }
 
