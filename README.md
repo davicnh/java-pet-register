@@ -9,11 +9,13 @@ O projeto permite cadastrar, buscar, alterar e excluir pets, utilizando arquivos
 📌 Funcionalidades
 
 📝 Cadastro de pets
+
 Permite cadastrar um novo pet informando seus dados através de um formulário.
 
 Os dados são armazenados em arquivos `.TXT` dentro da pasta `petsCadastrados`.
 
 🔎 Busca de pets
+
 É possível buscar pets utilizando um ou dois critérios simultaneamente.
 
 Os critérios disponíveis são:
