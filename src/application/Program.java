@@ -31,7 +31,7 @@ public class Program {
             System.out.print("Digite a opção escolhida: ");
             opcao = sc.nextInt();
             sc.nextLine();
-            if (opcao <= 0 || opcao > 6) {
+            if (opcao <= 0 || opcao > 5) {
                 System.out.print("Número invalido, digite novamente: ");
                 opcao = sc.nextInt();
             }
@@ -102,7 +102,7 @@ public class Program {
             System.out.println("3 - Idade");
             System.out.println("4 - Peso");
             System.out.println("5 - Raça");
-            System.out.println("6 - Cidade");
+            System.out.println("6 - Endereço");
             System.out.println("-------------------------------------------------------------------------------------");
             if (quantidade == 1) {
                 System.out.print("Digite o dado escolhido: ");
@@ -131,7 +131,7 @@ public class Program {
                         valor1 = sc.nextLine();
                         break;
                     case 6:
-                        System.out.print("Digite a cidade do pet: ");
+                        System.out.print("Digite o endereço do pet: ");
                         valor1 = sc.nextLine();
                         break;
                     default:
@@ -171,7 +171,7 @@ public class Program {
                         valor1 = sc.nextLine();
                         break;
                     case 6:
-                        System.out.print("Digite a cidade do pet: ");
+                        System.out.print("Digite o endereço do pet: ");
                         valor1 = sc.nextLine();
                         break;
                     default:
@@ -201,7 +201,7 @@ public class Program {
                         valor2 = sc.nextLine();
                         break;
                     case 6:
-                        System.out.print("Digite a cidade do pet: ");
+                        System.out.print("Digite o endereço do pet: ");
                         valor2 = sc.nextLine();
                         break;
                     default:
@@ -372,7 +372,7 @@ public class Program {
             System.out.println("3 - Idade");
             System.out.println("4 - Peso");
             System.out.println("5 - Raça");
-            System.out.println("6 - Cidade");
+            System.out.println("6 - Endereço");
             System.out.println("-------------------------------------------------------------------------------------");
             if (quantidade == 1) {
                 System.out.print("Digite o dado escolhido: ");
@@ -401,7 +401,7 @@ public class Program {
                         valor1 = sc.nextLine();
                         break;
                     case 6:
-                        System.out.print("Digite a cidade do pet: ");
+                        System.out.print("Digite o endereço do pet: ");
                         valor1 = sc.nextLine();
                         break;
                     default:
@@ -441,7 +441,7 @@ public class Program {
                         valor1 = sc.nextLine();
                         break;
                     case 6:
-                        System.out.print("Digite a cidade do pet: ");
+                        System.out.print("Digite o endereço do pet: ");
                         valor1 = sc.nextLine();
                         break;
                     default:
@@ -471,7 +471,7 @@ public class Program {
                         valor2 = sc.nextLine();
                         break;
                     case 6:
-                        System.out.print("Digite a cidade do pet: ");
+                        System.out.print("Digite o endereço do pet: ");
                         valor2 = sc.nextLine();
                         break;
                     default:
@@ -627,11 +627,16 @@ public class Program {
                     System.err.println("Erro: " + e.getMessage());
                 }
             }
-            System.out.print("Digite o pet que deseja alterar (digitando o número correspondente): ");
-            int escolhaAlteracao = sc.nextInt();
-            while (escolhaAlteracao > listaEscolha.size() || escolhaAlteracao < 1) {
+            int escolhaAlteracao = 0;
+            if (listaEscolha.isEmpty()) {
+                System.out.println("Nenhum pet foi encontrado.");
+            } else {
                 System.out.print("Digite o pet que deseja alterar (digitando o número correspondente): ");
                 escolhaAlteracao = sc.nextInt();
+                while (escolhaAlteracao > listaEscolha.size() || escolhaAlteracao < 1) {
+                    System.out.print("Digite o pet que deseja alterar (digitando o número correspondente): ");
+                    escolhaAlteracao = sc.nextInt();
+                }
             }
 
             File arquivoEscolhido = listaEscolha.get(escolhaAlteracao - 1);
@@ -731,7 +736,7 @@ public class Program {
             System.out.println("3 - Idade");
             System.out.println("4 - Peso");
             System.out.println("5 - Raça");
-            System.out.println("6 - Cidade");
+            System.out.println("6 - Endereço");
             System.out.println("-------------------------------------------------------------------------------------");
             if (quantidade == 1) {
                 System.out.print("Digite o dado escolhido: ");
@@ -760,7 +765,7 @@ public class Program {
                         valor1 = sc.nextLine();
                         break;
                     case 6:
-                        System.out.print("Digite a cidade do pet: ");
+                        System.out.print("Digite o endereço do pet: ");
                         valor1 = sc.nextLine();
                         break;
                     default:
@@ -800,7 +805,7 @@ public class Program {
                         valor1 = sc.nextLine();
                         break;
                     case 6:
-                        System.out.print("Digite a cidade do pet: ");
+                        System.out.print("Digite o endereço do pet: ");
                         valor1 = sc.nextLine();
                         break;
                     default:
@@ -830,7 +835,7 @@ public class Program {
                         valor2 = sc.nextLine();
                         break;
                     case 6:
-                        System.out.print("Digite a cidade do pet: ");
+                        System.out.print("Digite o endereço do pet: ");
                         valor2 = sc.nextLine();
                         break;
                     default:
@@ -986,11 +991,16 @@ public class Program {
                     System.err.println("Erro: " + e.getMessage());
                 }
             }
-            System.out.print("Digite o pet que deseja deletar (digitando o número correspondente): ");
-            int escolhaDelete = sc.nextInt();
-            while (escolhaDelete > listaEscolha4.size() || escolhaDelete < 1) {
+            int escolhaDelete = 0;
+            if (listaEscolha4.isEmpty()) {
+                System.out.println("Nenhum pet foi encontrado");
+            } else {
                 System.out.print("Digite o pet que deseja deletar (digitando o número correspondente): ");
                 escolhaDelete = sc.nextInt();
+                while (escolhaDelete > listaEscolha4.size() || escolhaDelete < 1) {
+                    System.out.print("Digite o pet que deseja deletar (digitando o número correspondente): ");
+                    escolhaDelete = sc.nextInt();
+                }
             }
 
             File arquivoEscolhidoDelete = listaEscolha4.get(escolhaDelete - 1);
@@ -1001,14 +1011,14 @@ public class Program {
             boolean resultadoDelete = false;
             if (respostaDelete.equalsIgnoreCase("SIM")) {
                 resultadoDelete = arquivoEscolhidoDelete.delete();
+
+                if (resultadoDelete) {
+                    System.out.println("Pet deletado com sucesso!");
+                } else {
+                    System.out.println("Não foi possivel deletar o pet.");
+                }
             } else if (respostaDelete.equalsIgnoreCase("NÃO")) {
                 System.out.println("Exclusão cancelada.");
-            }
-
-            if (resultadoDelete) {
-                System.out.println("Pet deletado com sucesso!");
-            } else {
-                System.out.println("Não foi possivel deletar o pet.");
             }
         }
         //Fim da opção 4 do menu (Passo 7 do desafio)
