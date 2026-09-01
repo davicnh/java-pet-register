@@ -6,7 +6,7 @@ O projeto permite cadastrar, buscar, alterar e excluir pets, utilizando arquivos
 
 ---
 
-📌 Funcionalidades
+📌 Funcionalidades do Sistema
 
 📝 Cadastro de pets
 
@@ -77,3 +77,5 @@ Labrador
 ```
 
 A aplicação utiliza `BufferedReader`, `BufferedWriter`, `FileReader` e `FileWriter` para leitura e escrita dos dados.
+
+
